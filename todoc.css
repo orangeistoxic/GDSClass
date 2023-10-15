@@ -57,6 +57,7 @@ body{
     background-color: rgba(182, 224, 255, 0.32);
     width: 24.25rem;
     height: 3.75rem;
+    border-bottom: 1px solid rgba(182, 224, 255, 0.32);
     font-family: 'Fira Code', monospace;
     font-size: 0.8125rem;
     font-style: normal;
