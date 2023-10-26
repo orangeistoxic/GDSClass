@@ -65,7 +65,8 @@ body{
 }
 
 .input{
-    color: #b6e0ff;
+    width: 20rem;
+    color: white;
     font-family: 'Inter', sans-serif ;
     font-size: 0.8125rem;
     font-style: normal;
