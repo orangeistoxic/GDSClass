@@ -6,7 +6,7 @@
     width: 40rem;
     height: 33.5rem;
     align-items: center;
-    justify-content: center;
+    padding: 4rem 0 0 0;
     border-radius: 0.625rem;
     display: flex;
     flex-direction: column;
@@ -130,6 +130,7 @@ body{
     border-color: #b6e0ff;
     margin: 0.5rem;
     border-style:solid;
+
     
 }
 

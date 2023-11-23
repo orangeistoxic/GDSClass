@@ -21,22 +21,62 @@ const todos = [
     },
   ];
   
-  // this function receive array of objects
-  // and return array of string
-  // [
-  //   "Calculus HW2 is still in progress.",
-  //   "Side Project Figma is still in progress.",
-  //   "Course Slide is still in progress.",
-  //   "Write Blog Post is completed.",
-  //   "Test is completed.",
-  // ];
-  
-  // try to not use if, for, while
-  function getTodosStatus(todos) {
-    function out(todos){
-        return todos.done ?  `${todos.name} is completed.` : `${todos.name} is still in progress.`;
+function SayHi(){
+  console.log('Hi');
+}
+
+
+const thelist=document.querySelector('.list');
+
+
+
+function RenderTheList(){
+  thelist.innerHTML='';
+  for (let i = 0; i < 5; i++) {
+    const newbar = document.createElement('div');
+    newbar.classList.add('bar');
+
+    const newbut = document.createElement('button');
+    newbut.onclick = function() {
+      todos[i].done = !todos[i].done;
+      RenderTheList();
+    } 
+
+    const newtodo = document.createElement('p');
+
+    if (todos[i].done) {
+      newbut.classList.add('YDone');
+
+      newtodo.classList.add('Ything');
     }
-    return todos.map(out);
+    else {
+      newbut.classList.add('NDone');
+
+      newtodo.classList.add('Nthing');
+
+    }
+    newtodo.append(todos[i].name);
+
+    newbar.append(newbut, newtodo);
+
+    console.log(newbar);
+
+    thelist.append(newbar);
+
   }
-  
-  console.log(getTodosStatus(todos));
+}
+
+function Addnewtodo(){
+  const inputbar=document.querySelector('.input');
+  todos.unshift(
+    {
+      name : inputbar.value,
+      done : false,
+    },
+  )
+
+  RenderTheList();
+  inputbar.value='';
+}
+
+RenderTheList();
