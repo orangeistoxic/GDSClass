@@ -65,7 +65,7 @@ body{
 }
 
 .input{
-    width: 20rem;
+    width: 20rem    ;
     color: white;
     font-family: 'Inter', sans-serif ;
     font-size: 0.8125rem;
@@ -111,7 +111,6 @@ body{
     background-color: rgba(182, 224, 255, 0.32);
     width: 24.25rem;
     height: 3.75rem;
-    -webkit-text-fill-color: #b6e0ff;
     border-bottom: 1px solid rgba(182, 224, 255, 0.32);
     align-items: center;
     
@@ -153,6 +152,7 @@ body{
     font-size: 0.8125rem;
     font-style: normal;
     line-height: normal;
+    -webkit-text-fill-color: rgba(182, 224, 255, 0.32);
     font-weight: 600;
 }
 
@@ -161,5 +161,6 @@ body{
     font-size: 0.8125rem;
     font-style: normal;
     line-height: normal;
+    -webkit-text-fill-color: #fff;
     font-weight: 600;
 }
