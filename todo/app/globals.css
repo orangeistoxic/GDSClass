@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;600;700&family=Inter:wght@500&display=swap');
+
+.blackground {
+  background-color: #00111d;
+  box-sizing: border-box;
+  width: 40rem;
+  height: 33.5rem;
+  align-items: center;
+  padding: 4rem 0 0 0;
+  border-radius: 0.625rem;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+#todo {
+  color: #b6e0ff;
+  font-family: 'Fira Code', monospace;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 0.5rem 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  background-color: #b6e0ff;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.inputbar {
+
+  background-color: rgba(182, 224, 255, 0.32);
+  width: 24.25rem;
+  height: 3.75rem;
+  margin: 0 0 1rem 0;
+  border-radius: 0.625rem;
+  display: flex;
+  align-items: center;
+}
+
+.Plus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  width: 1.5625rem;
+  height: 1.5625rem;
+  border-radius: 50%;
+  background: transparent;
+  border-color: #b6e0ff;
+  margin: 0.5rem;
+  -webkit-text-fill-color: #b6e0ff;
+  border-style: solid;
+
+}
+
+.PP {
+  font-size: 1rem;
+}
+
+.input {
+  width: 20rem;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  background: transparent;
+  border: transparent;
+  outline: none;
+}
+
+
+::placeholder {
+  color: rgba(182, 224, 255, 0.32);
+  ;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.list {
+
+  color: white;
+  width: 24.25rem;
+  max-height: 15rem;
+  border-radius: 0.625rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
+
+
+
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.bar {
+  display: flex;
+  flex-shrink: 0;
+  background-color: rgba(182, 224, 255, 0.32);
+  width: 24.25rem;
+  height: 3.75rem;
+  border-bottom: 1px solid rgba(182, 224, 255, 0.32);
+  align-items: center;
+
+
+}
+
+.bar:last-child {
+  border-bottom: none;
+}
+
+.NDone {
+
+  flex-shrink: 0;
+  width: 1.5625rem;
+  height: 1.5625rem;
+  border-radius: 50%;
+  background: transparent;
+  border-color: #b6e0ff;
+  margin: 0.5rem;
+  border-style: solid;
+
+
+}
+
+.YDone {
+
+  flex-shrink: 0;
+  width: 1.5625rem;
+  height: 1.5625rem;
+  border-radius: 50%;
+  background: #b6e0ff;
+  border-color: #b6e0ff;
+  margin: 0.5rem;
+  border-style: solid;
+
+}
+
+.Ything {
+  text-decoration: line-through;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8125rem;
+  font-style: normal;
+  line-height: normal;
+  -webkit-text-fill-color: rgba(182, 224, 255, 0.32);
+  font-weight: 600;
+}
+
+.Nthing {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8125rem;
+  font-style: normal;
+  line-height: normal;
+  -webkit-text-fill-color: #fff;
+  font-weight: 600;
+}
