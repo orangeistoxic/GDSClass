@@ -1,52 +1,47 @@
 'use client';
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+
+import { createClient } from '@supabase/supabase-js'
+const supabaseUrl = 'https://pdguvljuizwsqvhymjhd.supabase.co'
+const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_KEY;
+const supabase = createClient(supabaseUrl, supabaseKey)
 
 
-
-const initailTodos = [
-  {
-    id: 1,
-    name: "Calculus HW2",
-    done: false,
-  },
-  {
-    id: 2,
-    name: "Side Project Figma",
-    done: false,
-  },
-  {
-    id: 3,
-    name: "Course Slide",
-    done: false,
-  },
-  {
-    id: 4,
-    name: "Write Blog Post",
-    done: true,
-  },
-  {
-    id: 5,
-    name: "Test",
-    done: true,
-  },
-];
 
 export default function Home() {
 
   const inputRef = useRef(null);
-  const [todos, setTodos] = useState(initailTodos);
+  const [todos, setTodos] = useState([]);
+
+  useEffect(() => {
+    async function fetchTodos() {
+      let { data: todos, error } = await supabase
+        .from('todos')
+        .select('*')
+
+        console.log(todos);
+        setTodos(todos)
+    }
+    fetchTodos();
+  }, [])
 
   function Todo({ todo }) {
     return (
       <div className="bar">
-        <button className={`${todo.done ? "YDone" : "NDone"}`} onClick={() => {
+        <button className={`${todo.done ? "YDone" : "NDone"}`} onClick={async () => {
+
+          const { data, error } = await supabase
+            .from('todos')
+            .update({ done: !todo.done})
+            .eq('id',todo.id)
+            .select()
+
+          console.log(data);
+
           const newTodos = todos.map((t) => {
             if(t.id == todo.id) {
-              return {
-                ...t,
-                done: !t.done,
-              }
+              return data[0];
             }
             return t
           });
@@ -65,13 +60,18 @@ export default function Home() {
     <div className="blackground">
       <p ID="todo">TODO</p>
       <div className="inputbar">
-        <button className="Plus" onClick={() => {
-          console.log(inputRef.current.value);
-          setTodos([{
-            id: todos.length+1,
-            name: inputRef.current.value,
-            done: false,
-          }, ...todos])
+        <button className="Plus" onClick={ async () => {
+          
+          const { data, error } = await supabase
+            .from('todos')
+            .insert([
+              { name: inputRef.current.value , done: false},
+            ])
+            .select()
+
+            console.log(data);
+
+          setTodos([data[0], ...todos])
           inputRef.current.value = '';
         }}><p className="PP">+</p>
         </button>
